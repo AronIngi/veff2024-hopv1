@@ -1,0 +1,8 @@
+:root
+{
+    --columns: 12;
+    --gutter: 30px;
+    --max-width:1200px;
+    --vertical-space: calc(var(--gutter) * 1);
+    --vertical-space-large: calc(var(--gutter) * 1);
+}
