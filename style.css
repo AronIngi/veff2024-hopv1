@@ -5,6 +5,7 @@
 
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -18,7 +19,7 @@ html {
   --gutter: 30px;
   --max-width:1200px;
   --vertical-space: calc(var(--gutter) * 1);
-  --vertical-space-large: calc(var(--gutter) * 1);
+  --vertical-space-large: calc(var(--gutter) * 1.5);
 }
 
 .wrapper {
@@ -36,7 +37,7 @@ html {
   background-image: url("../images/pizza.png");
   background-position: top right;
   object-fit: cover;
-  height: 800px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: 890px 1330px;
   background-attachment: fixed;
@@ -47,6 +48,11 @@ html {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   min-width: 1600px;
+  gap: var(--gutter);
+}
+
+.content-wrapper {
+  display: grid;
   gap: var(--gutter);
 }
 
@@ -89,7 +95,95 @@ nav > ul {
 }
 
 main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
   flex: 1;
+}
+
+main section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  min-width: 1600px;
+  max-width: 1600px;
+  gap: 30px;
+}
+
+.emoty-column {
+  grid-column: span 1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  grid-column: span var(--columns);
+  gap: 1rem;
+}
+
+.announcement .main-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.announcement .main-content > div {
+  grid-column-start: 2;
+  grid-column-end: span 5;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.announcement img {
+  padding-top: 150px;
+  grid-column: span 6;
+}
+
+main > div {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: var(--vertical-space-large);
+}
+
+.latest-recipes {
+  background: linear-gradient(to bottom, transparent, 0, transparent, 20%, #FAFAFA 20%);
+}
+
+.announcement {
+  background: linear-gradient(to top, transparent, 0, transparent, 10%, #F7F1EB 10%);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+
+.card {
+  grid-column: span 4;
+}
+
+.card > img {
+  width: 100%;
+  max-height: 364px;
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #FFFFFF;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

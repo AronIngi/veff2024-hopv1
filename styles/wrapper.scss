@@ -15,7 +15,7 @@
 	background-image: url("../images/pizza.png");
 	background-position: top right;
 	object-fit: cover;
-	height: 800px;
+	height: 100vh;
 	background-repeat: no-repeat;
 	background-size: 890px 1330px;
 	background-attachment: fixed;
@@ -27,5 +27,11 @@
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
     min-width: 1600px;
+    gap: var(--gutter);
+}
+
+.content-wrapper
+{
+    display: grid;
     gap: var(--gutter);
 }
