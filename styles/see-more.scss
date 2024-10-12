@@ -1,0 +1,35 @@
+@media(min-width: 1600px)
+{
+    .see-more {
+        height: 200px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 30px;
+    }
+
+    .see-more > button
+    {
+        grid-column-start: 6;
+        grid-column-end: span 2;
+
+        height: 52px;
+    }
+
+    .first-line,
+    .second-line
+    {
+        border-top: solid black 1px;
+    }
+
+    .see-more > .first-line
+    {
+        grid-column: span 4;
+    }
+
+    .see-more > .second-line
+    {
+        grid-column-start: 9;
+        grid-column-end: span 4;
+    }
+}

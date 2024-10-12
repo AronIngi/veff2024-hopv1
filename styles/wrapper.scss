@@ -1,7 +1,6 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    gap: var(--gutter);
 }
 
 .header-wrapper
@@ -12,26 +11,91 @@
     background-color: #FAFAFA;
     gap: var(--gutter);
 
-	background-image: url("../images/pizza.png");
-	background-position: top right;
-	object-fit: cover;
-	height: 100vh;
-	background-repeat: no-repeat;
-	background-size: 890px 1330px;
-	background-attachment: fixed;
+    background-image: url("../images/pizza.png");
+    background-position: bottom left;
+    object-fit: contain;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 633px 950px;
+    background-attachment: fixed;
+    max-width: 320px;
 }
 
 .nav-wrapper
 {
-    padding-top: var(--gutter);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+
+    background-color: #FFFFFF;
+}
+
+.nav-content
+{
+    min-width: 320px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    min-width: 1600px;
-    gap: var(--gutter);
+    grid-template-columns: repeat(12, 1fr);
+    gap:20px;
+    align-items: center;
 }
 
 .content-wrapper
 {
     display: grid;
     gap: var(--gutter);
+}
+@media(min-width: 1600px)
+{
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FAFAFA;
+        gap: var(--gutter);
+
+        background-image: url("../images/pizza.png");
+        background-position: top right;
+        object-fit: cover;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 890px 1330px;
+        background-attachment: fixed;
+    }
+
+    .nav-wrapper
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+
+        background-color: #FFFFFF;
+    }
+
+    .nav-content
+    {
+        padding-top: var(--gutter);
+        padding-bottom: var(--gutter);
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        min-width: 1600px;
+        gap: var(--gutter);
+    }
+
+    .content-wrapper
+    {
+        display: grid;
+        gap: var(--gutter);
+    }
 }

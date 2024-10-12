@@ -1,8 +1,19 @@
 :root
 {
     --columns: 12;
-    --gutter: 30px;
-    --max-width:1200px;
+    --gutter: 20px;
+    --max-width:320px;
     --vertical-space: calc(var(--gutter) * 1);
     --vertical-space-large: calc(var(--gutter) * 1.5);
+}
+@media(min-width: 1600px)
+{
+    :root
+    {
+        --columns: 12;
+        --gutter: 30px;
+        --max-width:1200px;
+        --vertical-space: calc(var(--gutter) * 1);
+        --vertical-space-large: calc(var(--gutter) * 1.5);
+    }
 }

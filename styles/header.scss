@@ -1,44 +1,90 @@
 header
-{
-    grid-column: span 2;
-}
+    {
+        grid-column-start: 2;
+        grid-column-end: span 4;
+    }
 
-header > img
-{
-    grid-column: span 2;
-}
+    header > img
+    {
+        width: 90px;
+        grid-column: span 2;
+    }
 
-nav
-{
-    display: grid;
-    grid-column: span 3;
-    grid-column-end: calc(var(--columns) + 1);
-}
+    nav
+    {
+        display: grid;
+        grid-column: span 3;
+        grid-column-end: calc(var(--columns) + 1);
+    }
 
-nav > ul
-{
-    list-style: none;
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--gutter);
-}
+    nav > ul
+    {
+        display: none;
+    }
 
-.header-grid
-{
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    max-width: 1600px;
-    gap: var(--gutter);
-    flex: 1;
-}
+    .header-grid
+    {
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        max-width: 1600px;
+        gap: var(--gutter);
+        flex: 1;
+    }
 
-.header-content
-{
-    display: flex;
-    flex-direction: column;
-    grid-column: span 5;
-    gap: 10px;
-    justify-content: center;
-}
+    .header-content
+    {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 5;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        min-width: 320px;
+    }
 
+@media(min-width: 1600px)
+{
+    header
+    {
+        grid-column: span 2;
+    }
+
+    header > img
+    {
+        grid-column: span 2;
+    }
+
+    nav
+    {
+        display: grid;
+        grid-column: span 3;
+        grid-column-end: calc(var(--columns) + 1);
+    }
+
+    nav > ul
+    {
+        list-style: none;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gutter);
+    }
+
+    .header-grid
+    {
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        max-width: 1600px;
+        gap: var(--gutter);
+        flex: 1;
+    }
+
+    .header-content
+    {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 5;
+        gap: 10px;
+        justify-content: center;
+    }
+}

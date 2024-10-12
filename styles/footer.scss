@@ -1,0 +1,133 @@
+@media(min-width: 1600px)
+{
+    footer
+    {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        gap: var(--vertical-space-large);
+    }
+
+    .newsletter
+    {
+        height: 350px;
+        display: grid;
+        justify-items: center;
+        background-color: #000000;
+    }
+
+    .newsletter h2,
+    .newsletter p,
+    .newsletter label
+    {
+        color: #FFFFFF;
+    }
+
+    .newsletter .footer-content
+    {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        min-width: 1600px;
+        gap: var(--gutter);
+        max-width: 1600px;
+    }
+
+    .footer-heading {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gutter);
+        grid-column: span 6;
+        justify-content: center;
+    }
+
+    .newsletter form {
+        grid-column: span 6;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+    }
+
+    .email
+    {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gutter);
+        justify-content: center;
+    }
+
+    .newsletter form > div
+    {
+        grid-column: span 6;
+    }
+
+    .newsletter form > input
+    {
+        grid-column: span 2;
+        grid-column-end: 7;
+    }
+
+    .input {
+        height: 52px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+    }
+
+    .input > input
+    {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
+    .footer-email
+    {
+        grid-column: span 3;
+        border: 0;
+        border-bottom: solid white 1px;
+    }
+
+    .footer-submit
+    {
+        grid-column: span 2;
+        grid-column-end: 7;
+        border-radius: 0px;
+    }
+
+    .social-media
+    {
+        display: grid;
+        justify-content: center;
+        height:350px;
+    }
+
+    .social-media-content
+    {
+        border-top: solid black 1px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1600px;
+        min-width: 1600px;
+        gap: var(--gutter);
+    }
+
+    .social-media-header
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .social-media-links > img
+    {
+        max-height: 42px;
+    }
+
+    .social-media-links
+    {
+        display: flex;
+        gap: var(--gutter);
+        align-items: center;
+    }
+}
