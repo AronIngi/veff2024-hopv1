@@ -14,6 +14,19 @@ html {
   box-sizing: inherit;
 }
 
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  .not-mobile {
+    display: none;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1600px), (min-width: 800px) {
+  .only-mobile {
+    display: none;
+  }
+}
 :root {
   --columns: 12;
   --gutter: 20px;
@@ -31,52 +44,7 @@ html {
     --vertical-space-large: calc(var(--gutter) * 1.5);
   }
 }
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #FAFAFA;
-  gap: var(--gutter);
-  background-image: url("../images/pizza.png");
-  background-position: bottom left;
-  object-fit: contain;
-  height: 450px;
-  background-repeat: no-repeat;
-  background-size: 633px 950px;
-  background-attachment: fixed;
-  max-width: 320px;
-}
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  background-color: #FFFFFF;
-}
-
-.nav-content {
-  min-width: 320px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-  align-items: center;
-}
-
-.content-wrapper {
-  display: grid;
-  gap: var(--gutter);
-}
-
-@media (min-width: 1600px) {
+@media (min-width: 1600px), (min-width: 800px) {
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -91,6 +59,7 @@ html {
     background-position: top right;
     object-fit: cover;
     height: 100vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: 890px 1330px;
     background-attachment: fixed;
@@ -108,7 +77,8 @@ html {
     padding-bottom: var(--gutter);
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
-    min-width: 1600px;
+    width: 1600px;
+    max-width: 90%;
     gap: var(--gutter);
   }
   .content-wrapper {
@@ -116,45 +86,49 @@ html {
     gap: var(--gutter);
   }
 }
-header {
-  grid-column-start: 2;
-  grid-column-end: span 4;
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+    gap: var(--gutter);
+    background-image: url("../images/pizza.png");
+    background-position: top left;
+    object-fit: contain;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 633px 850px;
+    background-attachment: fixed;
+    width: 100vw;
+  }
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+  }
+  .nav-content {
+    min-width: 320px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+  .content-wrapper {
+    display: grid;
+    gap: var(--gutter);
+  }
 }
-
-header > img {
-  width: 90px;
-  grid-column: span 2;
-}
-
-nav {
-  display: grid;
-  grid-column: span 3;
-  grid-column-end: calc(var(--columns) + 1);
-}
-
-nav > ul {
-  display: none;
-}
-
-.header-grid {
-  display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  max-width: 1600px;
-  gap: var(--gutter);
-  flex: 1;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  grid-column: span 5;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-}
-
-@media (min-width: 1600px) {
+@media (min-width: 1600px), (min-width: 800px) {
   header {
     grid-column: span 2;
   }
@@ -176,7 +150,8 @@ nav > ul {
   .header-grid {
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
-    max-width: 1600px;
+    width: 1600px;
+    max-width: 90%;
     gap: var(--gutter);
     flex: 1;
   }
@@ -188,7 +163,41 @@ nav > ul {
     justify-content: center;
   }
 }
-@media (min-width: 1600px) {
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  header {
+    grid-column-start: 2;
+    grid-column-end: span 4;
+  }
+  header > img {
+    width: 90px;
+    grid-column: span 2;
+  }
+  nav {
+    display: grid;
+    grid-column: span 3;
+    grid-column-end: calc(var(--columns) + 1);
+  }
+  nav > ul {
+    display: none;
+  }
+  .header-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    width: 100vw;
+    gap: var(--gutter);
+    flex: 1;
+  }
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 5;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+}
+@media (min-width: 1600px), (min-width: 800px) {
   main {
     display: grid;
     grid-template-columns: 100%;
@@ -198,8 +207,8 @@ nav > ul {
   main section {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    min-width: 1600px;
-    max-width: 1600px;
+    width: 1600px;
+    max-width: 90%;
     gap: 30px;
   }
   .main-content {
@@ -213,7 +222,7 @@ nav > ul {
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
   }
-  .announcement .main-content > div {
+  .announcement .main-content > .text {
     grid-column-start: 2;
     grid-column-end: span 5;
     height: 90%;
@@ -221,7 +230,7 @@ nav > ul {
     flex-direction: column;
     justify-content: center;
   }
-  .announcement img {
+  .announcement .image {
     padding-top: 150px;
     grid-column: span 6;
   }
@@ -235,6 +244,70 @@ nav > ul {
   }
   .latest-recipes {
     background: linear-gradient(to bottom, transparent, 0, transparent, 20%, #FAFAFA 20%);
+    width: 100vw;
+  }
+  .announcement {
+    background: linear-gradient(to top, transparent, 0, transparent, 10%, #F7F1EB 10%);
+  }
+  .video-recipes {
+    background: linear-gradient(to bottom, transparent, 0, transparent, 40%, #FAFAFA 40%);
+    width: 100vw;
+  }
+}
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  main {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    flex: 1;
+  }
+  main section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    min-width: 320px;
+    max-width: 320px;
+    gap: 20px;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    grid-column: span var(--columns);
+    gap: 1rem;
+  }
+  .announcement .main-content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  .announcement .main-content > div {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main-content > .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .announcement img {
+    width: 100%;
+    padding-top: 150px;
+    grid-column: span 6;
+  }
+  main > div {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: var(--vertical-space-large);
+    padding-bottom: var(--vertical-space-large);
+  }
+  .latest-recipes {
+    background: linear-gradient(to bottom, transparent, 0, transparent, 10%, #FAFAFA 10%);
   }
   .announcement {
     background: linear-gradient(to top, transparent, 0, transparent, 10%, #F7F1EB 10%);
@@ -243,7 +316,7 @@ nav > ul {
     background: linear-gradient(to bottom, transparent, 0, transparent, 40%, #FAFAFA 40%);
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: 1600px), (min-width: 800px) {
   footer {
     display: grid;
     grid-template-columns: 100%;
@@ -342,18 +415,126 @@ nav > ul {
     align-items: center;
   }
 }
-@media (min-width: 1600px) {
-  .cards {
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  footer {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: var(--vertical-space-large);
+  }
+  .newsletter {
+    height: 350px;
+    display: grid;
+    justify-items: center;
+    background-color: #000000;
+  }
+  .newsletter h2,
+  .newsletter p,
+  .newsletter label {
+    color: #FFFFFF;
+  }
+  .newsletter .footer-content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    min-width: 320px;
+    gap: var(--gutter);
+    max-width: 320px;
+  }
+  .footer-heading {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    flex-direction: column;
+    gap: 20px;
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    justify-items: center;
+    align-items: center;
+  }
+  .footer-heading > p, .footer-heading > h2 {
+    grid-column: span 10;
+  }
+  .newsletter form {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  .email {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+    justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+  .newsletter form > input {
+    grid-column: span 2;
+    grid-column-end: 7;
+  }
+  .input {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 20px;
+  }
+  .input > input {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  .footer-email {
+    grid-column: span 10;
+    border: 0;
+    border-bottom: solid white 1px;
+  }
+  .footer-submit {
+    height: 42px;
+    grid-column-start: 3;
+    grid-column-end: span 6;
+    border-radius: 0px;
+  }
+  .social-media {
+    display: grid;
+    justify-content: center;
+    height: 350px;
+  }
+  .social-media-content {
+    border-top: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1600px;
+    min-width: 1600px;
     gap: var(--gutter);
   }
+  .social-media-header {
+    display: flex;
+    align-items: center;
+  }
+  .social-media-links > img {
+    max-height: 42px;
+  }
+  .social-media-links {
+    display: flex;
+    gap: var(--gutter);
+    align-items: center;
+  }
+}
+@media (min-width: 1600px), (min-width: 800px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gutter);
+  }
+  .cards > .title {
+    grid-column: span 12;
+  }
   .card {
-    grid-column: span 4;
+    width: 513px;
   }
   .card > img {
     width: 100%;
-    max-height: 364px;
+    height: 364px;
     display: block;
   }
   .content {
@@ -369,7 +550,42 @@ nav > ul {
     justify-content: space-between;
   }
 }
-@media (min-width: 1600px) {
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gutter);
+  }
+  .cards > .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+  .card {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+  .card > img {
+    width: 100%;
+    max-height: 200px;
+    display: block;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: #FFFFFF;
+  }
+  .inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1600px), (min-width: 800px) {
   .see-more {
     height: 200px;
     display: grid;
@@ -392,6 +608,27 @@ nav > ul {
   .see-more > .second-line {
     grid-column-start: 9;
     grid-column-end: span 4;
+  }
+}
+@media (max-width: 800px), (max-width: 320px) and (min-width: 320px) {
+  .see-more {
+    height: 200px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  .see-more > button {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+    height: 42px;
+    border-radius: 0px;
+    border: solid 1px #e3cdb1;
+    background-color: #f6f6f6;
+  }
+  .first-line,
+  .second-line {
+    display: none;
   }
 }
 

@@ -1,4 +1,4 @@
-@media(min-width: 1600px),(min-width:800px)
+@media(max-width:800px),(max-width: 320px) and (min-width:320px)
 {
     footer
     {
@@ -27,24 +27,32 @@
     {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        min-width: 1600px;
+        min-width: 320px;
         gap: var(--gutter);
-        max-width: 1600px;
+        max-width: 320px;
     }
 
     .footer-heading {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
         flex-direction: column;
-        gap: var(--gutter);
-        grid-column: span 6;
-        justify-content: center;
+        gap: 20px;
+        grid-column-start: 2;
+        grid-column-end: span 10;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .footer-heading > p, .footer-heading > h2
+    {
+        grid-column: span 10;
     }
 
     .newsletter form {
-        grid-column: span 6;
+        grid-column: span 12;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
     }
 
     .email
@@ -53,11 +61,8 @@
         flex-direction: column;
         gap: var(--gutter);
         justify-content: center;
-    }
-
-    .newsletter form > div
-    {
-        grid-column: span 6;
+        grid-column-start: 2;
+        grid-column-end: span 10;
     }
 
     .newsletter form > input
@@ -67,10 +72,9 @@
     }
 
     .input {
-        height: 52px;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 20px;
     }
 
     .input > input
@@ -81,15 +85,16 @@
 
     .footer-email
     {
-        grid-column: span 3;
+        grid-column: span 10;
         border: 0;
         border-bottom: solid white 1px;
     }
 
     .footer-submit
     {
-        grid-column: span 2;
-        grid-column-end: 7;
+        height: 42px;
+        grid-column-start: 3;
+        grid-column-end: span 6;
         border-radius: 0px;
     }
 

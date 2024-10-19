@@ -1,4 +1,4 @@
-@media(min-width: 1600px),(min-width:800px)
+@media(max-width:800px),(max-width: 320px) and (min-width:320px)
 {
     .wrapper{
         display: flex;
@@ -14,13 +14,13 @@
         gap: var(--gutter);
 
         background-image: url("../images/pizza.png");
-        background-position: top right;
-        object-fit: cover;
-        height: 100vh;
-        width: 100vw;
+        background-position: top left;
+        object-fit: contain;
+        height: 450px;
         background-repeat: no-repeat;
-        background-size: 890px 1330px;
+        background-size: 633px 850px;
         background-attachment: fixed;
+        width: 100vw;
     }
 
     .nav-wrapper
@@ -36,13 +36,13 @@
 
     .nav-content
     {
-        padding-top: var(--gutter);
-        padding-bottom: var(--gutter);
+        min-width: 320px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: grid;
-        grid-template-columns: repeat(var(--columns), 1fr);
-        width: 1600px;
-        max-width:90%;
-        gap: var(--gutter);
+        grid-template-columns: repeat(12, 1fr);
+        gap:20px;
+        align-items: center;
     }
 
     .content-wrapper

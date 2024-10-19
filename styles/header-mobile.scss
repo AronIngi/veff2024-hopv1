@@ -1,13 +1,14 @@
-
-@media(min-width: 1600px),(min-width:800px)
+@media (max-width:800px),(max-width: 320px) and (min-width:320px)
 {
     header
     {
-        grid-column: span 2;
+        grid-column-start: 2;
+        grid-column-end: span 4;
     }
 
     header > img
     {
+        width: 90px;
         grid-column: span 2;
     }
 
@@ -20,19 +21,14 @@
 
     nav > ul
     {
-        list-style: none;
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--gutter);
+        display: none;
     }
 
     .header-grid
     {
         display: grid;
         grid-template-columns: repeat(var(--columns), 1fr);
-        width: 1600px;
-        max-width: 90%;
+        width: 100vw;
         gap: var(--gutter);
         flex: 1;
     }
@@ -44,5 +40,7 @@
         grid-column: span 5;
         gap: 10px;
         justify-content: center;
+        align-items: center;
+        width: 100vw;
     }
 }
