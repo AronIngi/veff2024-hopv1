@@ -48,7 +48,9 @@
         grid-column: span 6;
     }
 
-    main > div
+    .latest-recipes,
+    .announcement,
+    .video-recipes
     {
 
         display: grid;
